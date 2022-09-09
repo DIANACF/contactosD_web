@@ -39,7 +39,7 @@ body{
     border-spacing: 15px;
 }
 
-.btnRegistrar{
+.btnRegistrar, .btnGuardar {
     padding: 10px;
     color: #fff;
     background-color: #008000;

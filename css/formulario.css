@@ -1,0 +1,75 @@
+.contentModal {
+    position: fixed;
+    z-index: 1;
+    left: 0px;
+    top: 0px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(250, 235, 235, 0.705);
+}
+
+.contentFormulario {
+    background-color: #ffff;
+    box-shadow: 0px 0px 12px 12px rgb(0 0 0 / 29%);
+    border-radius: 15px;
+    padding: 25px;
+    position: relative;
+}
+
+.btnCerrarModal {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+}
+
+.btnCerrar,
+.btnCerrar:hover,
+.btnCerrar:active {
+    border: 0;
+    background-color: rgb(255, 255, 255, 0);
+    cursor: pointer;
+}
+
+.btnCerrar:hover {
+    font-weight: bolder;
+}
+
+.tituloFormulario {
+    width: 100%;
+    text-align: center;
+}
+.controlInput {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.controlInput label {
+    width: 62px;
+    padding-right: 5px;
+}
+
+.controlInput input {
+    border: 0px;
+    border-bottom: 2px solid #000000;
+    outline: none;
+}
+
+.controlInput input:focus {
+    border: 0px;
+    border-bottom: 2px solid #4b9933;
+}
+
+.controlbtns {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
