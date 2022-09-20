@@ -10,6 +10,9 @@ let contactos = [
 }
 ];
 
+let operacion = '';//registrar/modificar/eliminar 
+let indexRegistroSeleccionado = null; 
+
 function mostrarContactos(){
     const tbody = document
     .getElementById('contactosTable')
@@ -24,6 +27,8 @@ function mostrarContactos(){
         fila +=  '    <td>'+contacto.nombre+'</td>';
         fila +=  '    <td>'+contacto.email+'</td>'; 
         fila +=  '    <td>'+contacto.telefono+'</td>';
+        fila +=  '    <td><button class="btnModificar" onclick="onClickModificar(' + id + ')">M</button></td>';
+        fila +=  '    <td><button class="btnEliminar">E</button></td>';
         fila += '</tr>';
         tbody.innerHTML += fila;
     }
@@ -41,16 +46,22 @@ function cerrarModal(){
         .classList.remove('ocultarModal');
     const formulario = document.forms['formContacto'];
     formulario.reset(); 
+  
 
 }
 
 document.getElementById('registrarBtn').addEventListener('click', ()=>{
-    cerrarModal();
+    document.getElementById('formularioModal')
+    .classList.remove('ocultarModal');
+    document.getElementById('tituloForm').innerText = 'Registrar';
+    operacion = 'registrar';
+    
 });
 
 
 document.getElementById('formularioContacto').addEventListener('submit', (ev)=>{
     ev.preventDefault();
+    const formulario = document.forms['formContacto'];
     const contacto = {
         nombre:document.forms['formContacto']['nombre'].value,
         email:document.forms['formContacto']['email'].value,
@@ -58,7 +69,29 @@ document.getElementById('formularioContacto').addEventListener('submit', (ev)=>{
     };
     //const nombre = document.getElementById('nombre').value;
     //alert(nombre);
-    contactos.push(contacto);
+    if (operacion == 'registrar') {
+        contactos.push(contacto);
+    }else {
+        contactos[indexRegistroSeleccionado] = contacto;
+    }
+    
     cerrarModal();
     mostrarContactos();
 });
+
+function onClickModificar(id) {
+    document.getElementById('formularioModal')
+    .classList.remove('ocultarModal');
+
+    document.getElementById('tituloForm').innerText = 'Modificar';
+    indexRegistroSeleccionado = id -1;
+    const contacto = contactos[indexRegistroSeleccionado];
+    const formulario = document.forms['formContacto'];
+    formulario['nombre'].value = contacto.nombre;
+    formulario['email'].value = contacto.email;
+    formulario['telefono'].value = contacto.telefono;
+    operacion = 'modificar';
+
+}
+
+
