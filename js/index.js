@@ -94,4 +94,28 @@ function onClickModificar(id) {
 
 }
 
+/*function onClickEliminar(nombre del modal del botón eliminar){
+     document.getElementById('formularioModal')
+    .classList.remove('ocultarModal');
+
+    indexRegistroSeleccionado = id -1;
+
+
+}
+function cerrar el nombre del modal (){
+    document.getElementById('el nombre del modal')
+    .classList.remove('ocultarModal');
+
+    indexRegistroSeleccionado = null;
+
+}
+
+function onClickConfirmarEliminar (){
+    contactos.splice(indexRegistroSeleccionado, 1);
+    cerrar nombre modal();
+    mostrarContactos();
+}*/
+
+
+
 
