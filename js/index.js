@@ -23,10 +23,10 @@ function mostrarContactos(){
         const id = parseInt(index) + 1;
         let fila = '<tr>';
 
-        fila += '    <td>'+id+'</td>';
+        fila += '    <td class="hiddenInMobile">'+id+'</td>';
         fila +=  '    <td>'+contacto.nombre+'</td>';
-        fila +=  '    <td>'+contacto.email+'</td>'; 
-        fila +=  '    <td>'+contacto.telefono+'</td>';
+        fila +=  '    <td class="hiddenInMobile">'+contacto.email+'</td>'; 
+        fila +=  '    <td class="hiddenInMobile">'+contacto.telefono+'</td>';
         fila +=  '    <td><button class="btnModificar" onclick="onClickModificar(' + id + ')">M</button></td>';
         fila +=  '    <td><button class="btnEliminar">E</button></td>';
         fila += '</tr>';

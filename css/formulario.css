@@ -77,3 +77,24 @@
 .ocultarModal {
     display: none;
 }
+
+@media screen and (max-width: 800px) {
+    
+    .contentModal{
+        width: 100%;
+        height: 100%;
+    }
+    .contentFormulario{
+        border-radius: 0px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .btnCerrarModal{
+        top: 50px;
+        width: 36px;
+        height: 36px;
+    }
+}
